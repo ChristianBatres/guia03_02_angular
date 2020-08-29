@@ -1,0 +1,16 @@
+<div class="header">
+    <h1>Gasolinera</h1>
+    <p>Ingrese la cantidad de gasolina a vender</p>
+    </div>
+   <label>Cantidad de Galones:</label>
+   <input type="number" min="0.05" max="150" step="0.05" [(ngModel)]="cantidad">
+   <label>Tipo de Combustible:</label>
+   <select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+    <option value="Selecciona">Selecciona</option>
+    <option *ngFor="let u of tipo" value="{{u}}" >
+    {{u}}
+    </option>
+   </select>
+   <label [hidden]="opcionSeleccionado == 'Selecciona'">Venta de Gasolina {{ opcionSeleccionado }} es $
+   {{venta}}</label>
+   
